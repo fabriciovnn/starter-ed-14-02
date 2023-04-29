@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+} 
+
+body {
+  background-color:darkslateblue;
+  width: 100vw;
+  height: 100vh;
+}
+
+h1 {
+  margin: 60px 0;
+  text-align: center;
+  letter-spacing: .5rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  margin-right: 10px;
+  padding: 10px 5px;
+  border-radius: 5px;
+  
+}
