@@ -1,4 +1,5 @@
 import express from 'express';
+//const express = require('express')
 
 //criacao do app api servidor
 const app = express();
@@ -22,6 +23,36 @@ const listaUsuarios = [];
 //ROTAS
 
 // USUARIOS
+
+app.use(validarAlgumacoisa)
+
+function validarAlgumacoisa(request, response, next) {
+  console.log('Validei')
+  next()
+}
+
+//MIDDLEWARE que valida os dados
+function verificarDados(request, response, next) {
+  const dados = request.body
+
+  if(!dados.email || !dados.email.includes('@') || !dados.email.includes('.com')) {
+    return response.status(400).json({
+      sucess: false,
+      dados: null,
+      mensagem: 'É obrigatório informar o email válido para cadastro do usuário'
+    })
+  }
+
+  if(!dados.password || dados.password.length < 6) {
+    return response.status(400).json({
+      sucess: false,
+      dados: null,
+      mensagem: 'É obrigatório informar a senha para cadastro do usuário com no mínimo 6 caracteres'
+    })
+  }
+
+  next()
+}
 
 // GET - LISTAR TODOS OS USUÁRIOS
 // QUERY PARAMS - /users?email="Joao"&idade="18" - filtros
@@ -94,26 +125,8 @@ app.get('/users/:id', (request, response) => {
 
 // POST - inserir/cadastrar/criar - CREATE
 // body -  É um pacote em formato JSON com os dados necessários para cadastrar um usuário (neste contexto)
-app.post('/users', (request, response) => {
+app.post('/users', verificarDados, (request, response) => {
   const dados = request.body
-
-  if(!dados.email || !dados.email.includes('@') || !dados.email.includes('.com')) {
-    return response.status(400).json({
-      sucess: false,
-      dados: null,
-      mensagem: 'É obrigatório informar o email válido para cadastro do usuário'
-    })
-  }
-
-  if(!dados.password || dados.password.length < 6) {
-    return response.status(400).json({
-      sucess: false,
-      dados: null,
-      mensagem: 'É obrigatório informar a senha para cadastro do usuário com no mínimo 6 caracteres'
-    })
-  }
-
-  //
 
   const novoUsuario = {
     id: new Date().getTime(), //forma de gerar um numero randomico unico getTime() retorna a quantidade de milisegundos desde 1970 1 de janeiro até o new Date()
