@@ -1,8 +1,10 @@
-.completo {
-  text-decoration:line-through;
-}
 
 .tarefa {
   font-size: 18px;
   color: blue;
+}
+
+.completo {
+  text-decoration:line-through;
+  color: red;
 }
