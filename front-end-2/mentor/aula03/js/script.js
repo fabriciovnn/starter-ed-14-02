@@ -53,13 +53,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   const ulElement = document.getElementById('espaco-todos')
 
    listaUsuarios.forEach((usuario) => {
-    const listaFiltrada =  listaDados.filter((dado) => dado.userID === usuario.id )
-
+    const listaFiltrada =  listaDados.filter((dado) => dado.userId === usuario.id )
+    console.log(listaFiltrada)
     ulElement.innerHTML += `
     <h2>Nome Usuário: ${usuario.name}</h2>
       <h3>Id Usuário: ${usuario.id}</h3>
     `
-    listaDados.forEach((item) => {
+    listaFiltrada.forEach((item) => {
           //cria elementos utilizando o JS
     const liElement = document.createElement('li') // <li></li>
     liElement.setAttribute('id', `${item.id}`)//<li id="1"></li>
