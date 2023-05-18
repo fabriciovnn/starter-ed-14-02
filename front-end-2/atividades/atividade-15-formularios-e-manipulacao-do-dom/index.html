@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Formulário elaborado</title>
+</head>
+<body>
+  <h1>Formulário</h1>
+  <form>
+    <fieldset class="container">
+      <legend>Dados pessoais:</legend>
+
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" class="input-dados-pessoais" required>
+      <br />
+      <label for="endereco">Endereço</label>
+      <input type="text" id="endereco" class="input-dados-pessoais" required>
+      <br />
+      <label for="cidade">Cidade</label>
+      <input type="text" id="cidade" class="input-dados-pessoais" required>
+      <br />
+      <label for="select">Estado:</label>
+        <select name="estado" id="select" class="input-dados-pessoais" required>
+          <option value="">Selecionar</option>
+          <option value="sp">São Paulo</option>
+          <option value="sc">Santa Catarina</option>
+          <option value="rs">Rio Grande do Sul</option>
+        </select>
+    </fieldset>
+
+    <fieldset class="container">
+      <legend>Dados profissionais:</legend>  
+      <section class="dados-profissionais">
+        <p>Natureza do Cargo</p>
+        <input type="radio" id="gerencia" name="cargo" value="gerencia" checked/>
+        <label for="gerencia">Gerência</label>
+
+        <input type="radio" id="financeiro" name="cargo" value="financeiro"/>
+        <label for="financeiro">Financeiro</label>
+
+        <input type="radio" id="recepcao" name="cargo" value="recepcao"/>
+        <label for="recepcao">Recepção</label>
+
+        <input type="radio" id="administrativo" name="cargo" value="administrativo"/>
+        <label for="administrativo">Administrativo</label>
+
+        <input type="radio" id="juridico" name="cargo" value="juridico"/>
+        <label for="juridico">Jurídico</label>
+      </section>
+
+      <section class="dados-profissionais">
+        <p>Área de interesse</p>
+        <input type="checkbox" id="computacao" name="interesse" value="computacao"/>
+        <label for="computacao">Computação</label>
+
+        <input type="checkbox" id="biologia" name="interesse" value="biologia"/>
+        <label for="biologia">Biologia</label>
+
+        <input type="checkbox" id="meio-ambiente" name="interesse" value="meio-ambiente"/>
+        <label for="meio-ambiente">Meio Ambiente</label>
+
+        <input type="checkbox" id="engenharia" name="interesse" value="engenharia"/>
+        <label for="engenharia">Engenharia</label>
+
+        <input type="checkbox" id="historia" name="interesse" value="historia"/>
+        <label for="historia">História</label>
+      </section>
+
+      <section
+        <label for="mini_curriculo">Mini-curriculo:</label>
+        <textarea name="" id="mini_curriculo" cols="60" rows="10"></textarea>
+      </section>
+
+    </fieldset>
+
+    <button class="botao" type="submit">Enviar</button>
+    <button class="botao" type="reset">Limpar</button>
+  </form>
+  <script src="index.js"></script>
+</body>
+</html>
