@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin-left: 10px;
+}
+
+.container {
+  margin: 20px 10px;
+}
+
+.container {
+  padding: 10px;
+}
+
+.dados-profissionais {
+  margin-bottom: 40px;
+}
+
+.input-dados-pessoais {
+  margin-bottom: 5px;
+}
+
+.botao {
+  padding: 5px 10px;
+  margin-left: 10px
+}

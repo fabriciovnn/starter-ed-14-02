@@ -36,12 +36,3 @@ function calcularSalario() {
 }
 
 btnCalc.addEventListener('click', calcularSalario)
-
-// document.addEventListener('click', (e) => {
-//   console.log(e)
-// })
-
-//desafio: tornar dinamico este formulario com o evento 'change'
-//colocar o change na pagina inteira - document.addEventListener('change', (e) => {
-//   console.log(e.target.value)
-// })
