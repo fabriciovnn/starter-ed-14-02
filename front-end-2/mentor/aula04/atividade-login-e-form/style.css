@@ -1,0 +1,46 @@
+:root{
+  --color-blue: blue;
+  --color-white: white;
+}
+body, *{
+  margin: 0;
+  padding: 0;
+
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.inputs-group{
+  max-width: 30vmax;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.btn{
+  width: 100%;
+  background-color: var(--color-blue);
+  border: 1px solid var(--color-white);
+  border-radius: 5px;
+}
+
+.dados {
+  text-align: center;
+  margin-bottom: 1vmax;
+}
+
+p {
+  text-align: center;
+}
+
+.a-group{
+  font-size: 14px;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
