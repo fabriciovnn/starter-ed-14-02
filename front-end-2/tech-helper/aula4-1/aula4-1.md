@@ -1,0 +1,1 @@
+Aprendemos sobre localStorage para a atividade de login que está na aula04
