@@ -4,11 +4,12 @@ formCadastroElement.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   //daqui pra baixo conseguimos capturar o value dos campos tranquilamente pois a página não reestarta
-
+  const nomeInput = document.getElementById('nome')
   const emailInput = document.getElementById('email')
   const senhaInput = document.getElementById('senha')
   const repetirSenhaInput = document.getElementById('re-senha')
 
+  const nomeValido = validarPreenchimentoCampo(nomeInput.value)
   const emailValido = validarPreenchimentoCampo(emailInput.value)
   const senhaValido = validarPreenchimentoCampo(senhaInput.value)
   const repetirSenhaValido = validarPreenchimentoCampo(repetirSenhaInput.value)
@@ -24,22 +25,20 @@ formCadastroElement.addEventListener('submit', async (e) => {
   }
 
   const novoUsuario = {
+    nome: nomeInput.value,
     email: emailInput.value,
-    senha: senhaInput.value,
+    senha: senhaInput.value
   }
-
-
-
-  console.log(novoUsuario);
 
  const deuBom = await cadastrarUsuario(novoUsuario);
 
  if(deuBom) {
+  nomeInput.value = ''
   emailInput.value = ''
   senhaInput.value = ''
   repetirSenhaInput.value = ''
 
-  // window.location.href = 'index.html'
+  window.location.href = 'index.html'
  }
 })
 
@@ -63,10 +62,10 @@ async function cadastrarUsuario(novoUsuario) {
   try{
   const response = await apiConfig.post('/users', novoUsuario)
 
-  console.log(`${response}`)
+  console.log(response)
   return true
   } catch(erro) {
-    console.log(`${erro}`)
+    alert(erro.response.data.mensagem)
     return false
   }
 }
