@@ -1,0 +1,75 @@
+/*header*/
+
+.input-group-text {
+  background-color: #fff;
+  border: var(--bs-border-width) solid #3a3a3a;
+  cursor: pointer;
+}
+
+.form-control {
+  border: var(--bs-border-width) solid #3a3a3a;
+  border-right-width: 0;
+}
+
+.form-control:focus {
+  border-color: #39ff14;
+  border-right-width: 0;
+  box-shadow: 0 0 0 0;
+}
+
+h1 {
+  color: #39ff14;
+}
+
+
+
+/* main */
+main {
+  background: url('../imgs/FUNDO_2.jpg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 0 600px 0;
+}
+
+.card {
+  background-color: transparent ;
+  color: white;
+  border: 1px solid #39ff14;
+}
+
+footer {
+  background-color: darkolivegreen;
+}
+
+
+
+
+/* MEDIA QUERIES */
+
+/* mobile */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 6rem;
+  }
+
+  main {
+    background-image: none;
+    background-color: black;
+  }
+
+}
+
+ /* medium */
+@media (min-width: 769px) and (max-width: 991px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
+/* large */
+@media (min-width: 992px) {
+  h1 {
+    font-size: 5rem;
+  }
+}
