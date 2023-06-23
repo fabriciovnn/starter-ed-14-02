@@ -1,9 +1,11 @@
 header {
   background-image: url('../imagens/banner-initial.png');
+	background-size: cover;
   background-position: center;
   background-color: black;
   opacity: 1
 }
+
 
 .btn-danger {
 	--bs-btn-bg: #B6060F;

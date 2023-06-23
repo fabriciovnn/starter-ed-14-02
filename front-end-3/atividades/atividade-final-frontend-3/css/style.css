@@ -1,13 +1,12 @@
 /*header*/
-
 .input-group-text {
   background-color: #fff;
-  border: var(--bs-border-width) solid #3a3a3a;
+  border: var(--bs-border-width) solid #39ff14;
   cursor: pointer;
 }
 
 .form-control {
-  border: var(--bs-border-width) solid #3a3a3a;
+  border: var(--bs-border-width) solid #39ff14;
   border-right-width: 0;
 }
 
@@ -18,18 +17,13 @@
 }
 
 h1 {
-  color: #39ff14;
+  color: #489529;
 }
-
-
 
 /* main */
 main {
-  background: url('../imgs/FUNDO_2.jpg');
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 0 0 600px 0;
+  background-color: #252525;
+  background-image: linear-gradient(0deg, #252525 0%, #262626 90%, #489529 100%)
 }
 
 .card {
@@ -38,24 +32,81 @@ main {
   border: 1px solid #39ff14;
 }
 
-footer {
-  background-color: darkolivegreen;
+.status::before {
+  content: '';
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  margin-right: 5px;
 }
 
+.alive::before {
+  background-color: #39ff14;
+}
 
+.dead::before {
+  background-color: crimson;
+}
 
+.unknown::before {
+  background-color: #ccc;
+}
+
+.bg-image {
+  height: 800px;
+  background-image: url('../imgs/FUNDO_2.jpg'); 
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+/* pagination */
+.active > .page-link {
+    background-color: #39ff14;
+    color: #252525;
+    border-color: #39ff14;
+  }  
+
+.page-link {
+	color: #39ff14;
+	cursor: pointer;
+	background-color: #252525;
+	border-color: #39ff14;
+}
+
+.page-link:hover {
+  color: #39ff14;
+  background-color: seagreen;
+  border-color: #39ff14;
+}
+
+.active > .page-link:hover {
+  background-color: seagreen;
+  color: #39ff14;
+}
+
+.disabled > .page-link {
+  color: seagreen;
+  background-color:#262626;
+  border-color: #39ff14;
+}
+
+/* footer */
+footer {
+  background-color: #489529;
+  color: #252525;
+}
 
 /* MEDIA QUERIES */
-
 /* mobile */
 @media (max-width: 768px) {
   h1 {
     font-size: 6rem;
   }
 
-  main {
-    background-image: none;
-    background-color: black;
+  .bg-image {
+    height: 300px;
   }
 
 }
@@ -64,6 +115,10 @@ footer {
 @media (min-width: 769px) and (max-width: 991px) {
   h1 {
     font-size: 3.5rem;
+  }
+
+  .bg-image {
+    height: 400px;
   }
 }
 

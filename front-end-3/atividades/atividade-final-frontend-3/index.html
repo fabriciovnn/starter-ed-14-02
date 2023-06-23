@@ -41,13 +41,36 @@
 
   <main class="container-fluid">
     <div class="container">
-      <div class="row g-5">
+      <div class="row g-4">
 
       <div class="col-12 col-md-6 col-lg-4">
         <div class="container">
           <div class="card">
               <img src="./imgs/136.jpeg" class="card-img-top" alt="avatar">
-              <div class="card-body">
+              <div class="card-body px-5">
+            <h5 class="card-title">Nome Personagem</h5>
+
+            <p class="card-text status alive">
+              Vivo - Humano
+            </p>
+
+            <dl>
+              <dt>Ultima localização conhecida:</dt>
+              <dd>Planeta XPTO</dd>
+
+              <dt>Visto a última vez em:</dt>
+              <dd>Nome do Capítulo</dd>
+            </dl>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="container">
+          <div class="card">
+              <img src="./imgs/136.jpeg" class="card-img-top" alt="avatar">
+              <div class="card-body px-5">
             <h5 class="card-title">Nome Personagem</h5>
 
             <p class="card-text">
@@ -70,30 +93,7 @@
         <div class="container">
           <div class="card">
               <img src="./imgs/136.jpeg" class="card-img-top" alt="avatar">
-              <div class="card-body">
-            <h5 class="card-title">Nome Personagem</h5>
-
-            <p class="card-text">
-              Vivo - Humano
-            </p>
-
-            <dl>
-              <dt>Ultima localização conhecida:</dt>
-              <dd>Planeta XPTO</dd>
-
-              <dt>Visto a última vez em:</dt>
-              <dd>Nome do Capítulo</dd>
-            </dl>
-              </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="container">
-          <div class="card">
-              <img src="./imgs/136.jpeg" class="card-img-top" alt="avatar">
-              <div class="card-body">
+              <div class="card-body px-5">
             <h5 class="card-title">Nome Personagem</h5>
 
             <p class="card-text">
@@ -116,7 +116,7 @@
         <div class="container-md">
           <div class="card">
               <img src="./imgs/136.jpeg" class="card-img-top" alt="avatar">
-              <div class="card-body">
+              <div class="card-body px-5">
             <h5 class="card-title">Nome Personagem</h5>
 
             <p class="card-text">
@@ -139,7 +139,7 @@
         <div class="container">
           <div class="card">
               <img src="./imgs/136.jpeg" class="card-img-top" alt="avatar">
-              <div class="card-body">
+              <div class="card-body px-5">
             <h5 class="card-title">Nome Personagem</h5>
 
             <p class="card-text">
@@ -162,7 +162,7 @@
         <div class="container">
           <div class="card">
               <img src="./imgs/136.jpeg" class="card-img-top" alt="avatar">
-              <div class="card-body">
+              <div class="card-body px-5">
             <h5 class="card-title">Nome Personagem</h5>
 
             <p class="card-text">
@@ -180,10 +180,33 @@
           </div>
         </div>
       </div>
-
 
       </div>
     </div>
+
+    <!-- paginaçao -->
+    <div class="row mt-5">
+      <div class="col-12 d-flex justify-content-center">
+        <nav aria-label="...">
+          <ul class="pagination">
+            <li class="page-item disabled" id="botao-prev">
+              <a class="page-link"><i class="bi bi-chevron-compact-left"></i>Anterior</a>
+            </li>
+
+            <li class="page-item active" id="botao-atual">
+              <a class="page-link">1</a>
+            </li>
+
+            <li class="page-item" id="botao-next">
+              <a class="page-link">Próximo<i class="bi bi-chevron-compact-right"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="bg-image"></div>
+
   </main>
 
   <footer class="container-fluid text-center fw-semibold pt-5">
@@ -204,7 +227,7 @@
         <p>
           <small>
             Desenvolvido por: 
-            <strong class="text-info">Nome do Desenvolvedor</strong> em 2023.
+            <strong class="text-info">Fabricio Vianna Arnecke</strong> em 2023.
           </small>
         </p>
       </div>
