@@ -92,6 +92,10 @@ main {
   border-color: #39ff14;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 /* footer */
 footer {
   background-color: #489529;

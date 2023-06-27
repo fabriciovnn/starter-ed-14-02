@@ -1,3 +1,6 @@
+const botaoPrev = document.getElementById('botao-prev')
+const botaoAtual = document.getElementById('botao-atual')
+const botaoNext = document.getElementById('botao-next')
 let paginaAtual = 1
 
 
@@ -20,7 +23,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   spanTotalEpisodios.innerHTML = `${totalEpisodios}`
 
   montarCards(characterList)
+  mudarBotoes(respostaApi.info.prev, respostaApi.info.next)
 })
+
+botaoNext.addEventListener('click', proximaPagina)
+botaoPrev.addEventListener('click', paginaAnterior)
 
 // buscar personagens
 async function buscarPersonagens(pagina) {
@@ -41,22 +48,22 @@ async function buscarPersonagens(pagina) {
 // montarCards
 function montarCards(characters) {
   const rowCards = document.getElementById('row-cards')
-  // rowCards.innerHTML = ''
+  rowCards.innerHTML = ''
 
   characters.forEach(async (character) => {
     const divCol = document.createElement('div')
     divCol.setAttribute('class', 'col-12 col-md-6 col-lg-4')
 
     const divContainerCards = document.createElement('div')
-    divCard.classList.add('container')
+    divContainerCards.classList.add('container')
 
     const divCard = document.createElement('div')
     divCard.classList.add('card')
 
     const imgCard = document.createElement('img')
-    img.setAttribute('src', `${character.image}`)
-    img.setAttribute('alt', 'avatar')
-    img.setAttribute('class', 'card-img-top')
+    imgCard.setAttribute('src', `${character.image}`)
+    imgCard.setAttribute('alt', 'avatar')
+    imgCard.setAttribute('class', 'card-img-top')
 
     const divBodyCard = document.createElement('div')
     divBodyCard.setAttribute('class', 'card-body px-5')
@@ -67,7 +74,7 @@ function montarCards(characters) {
     
     const pCardStatus = document.createElement('p')
     pCardStatus.innerHTML = `${character.status} - ${character.species}`
-    pCardStatus.setAttribute('card-body px-5')
+    pCardStatus.setAttribute('class', 'card-text status')
     if(character.status === 'Alive') {
       pCardStatus.classList.add('alive')
     } else if(character.status === 'Dead') {
@@ -78,19 +85,35 @@ function montarCards(characters) {
 
     const dlCard = document.createElement('dl')
     const dtLocation = document.createElement('dt')
-    dtLocation.innerText = 'Última Localização conhecida:'
+    dtLocation.innerText = 'Last Known Location'
 
     const ddLocation = document.createElement('dd')
     ddLocation.innerText = `${character.location.name}`
 
     const dtLastSeen = document.createElement('dt')
-    dtLastSeen.innerText = 'Visto a última vez em:'
+    dtLastSeen.innerText = 'Last Seen In'
 
     const ddLastSeen = document.createElement('dd')
     const ultimoEpisodio = character.episode[character.episode.length -1]
     const respostaLocalizacao = await axios.get(`${ultimoEpisodio}`)
     const ultimaLocalizacao = respostaLocalizacao.data.name
     ddLastSeen.innerText = `${ultimaLocalizacao}`
+
+    dlCard.appendChild(dtLocation)
+    dlCard.appendChild(ddLocation)
+    dlCard.appendChild(dtLastSeen)
+    dlCard.appendChild(ddLastSeen)
+
+    divBodyCard.appendChild(titleCard)
+    divBodyCard.appendChild(pCardStatus)
+    divBodyCard.appendChild(dlCard)
+
+    divCard.appendChild(imgCard)
+    divCard.appendChild(divBodyCard)
+    divContainerCards.appendChild(divCard)
+    divCol.appendChild(divContainerCards)
+    rowCards.appendChild(divCol)
+
 
     
 
@@ -121,4 +144,50 @@ function montarCards(characters) {
   })
 }
 
-// montarBotoes
+// mudarBotoes
+function mudarBotoes(prev, next) {
+  botaoAtual.children[0].innerText = paginaAtual
+
+  if (!prev) {
+    botaoPrev.classList.remove('cursor-pointer')
+    botaoPrev.classList.add('disabled')
+} else {
+    botaoPrev.classList.add('cursor-pointer')
+    botaoPrev.classList.remove('disabled')
+}
+
+if (!next) {
+    botaoNext.classList.remove('cursor-pointer')
+    botaoNext.classList.add('disabled')
+} else {
+    botaoNext.classList.add('cursor-pointer')
+    botaoNext.classList.remove('disabled')
+}
+}
+
+async function proximaPagina() {
+  // verificar se o botão esta desabilitado
+  if (!botaoNext.classList.contains('disabled')) {
+      // só dispara a requisição pra API se o botão estiver habilitado
+      ++paginaAtual
+
+      const dadosAPI = await buscarPersonagens(paginaAtual)
+
+
+      montarCards(dadosAPI.results)
+      mudarBotoes(dadosAPI.info.prev, dadosAPI.info.next)
+  }
+}
+
+async function paginaAnterior() {
+  // verificar se o botão esta desabilitado
+  if (!botaoPrev.classList.contains('disabled')) {
+      // só dispara a requisição pra API se o botão estiver habilitado
+      --paginaAtual
+
+      const dadosAPI = await buscarPersonagens(paginaAtual)
+
+      montarCards(dadosAPI.results)
+      mudarBotoes(dadosAPI.info.prev, dadosAPI.info.next)
+  }
+}
