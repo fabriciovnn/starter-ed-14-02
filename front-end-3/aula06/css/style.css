@@ -22,3 +22,11 @@ header {
 	--bs-btn-disabled-bg: #a5050f;
 	--bs-btn-disabled-border-color: #a5050f;
 }
+
+footer {
+	color: #757575;
+}
+
+li {
+	list-style: none;
+}
