@@ -4,7 +4,7 @@ const botaoNext = document.getElementById('botao-next')
 let paginaAtual = 1
 
 
-// domContentLoad
+// ao carregar a DOM
 document.addEventListener('DOMContentLoaded', async () => {
   const respostaApi = await buscarPersonagens()
   const characterList = respostaApi.results
@@ -37,7 +37,6 @@ async function buscarPersonagens(pagina) {
         page: pagina || 1
       }
     })
-    // console.log(response.data)
     return response.data
   } catch (error) {
     console.log(error)
@@ -47,6 +46,30 @@ async function buscarPersonagens(pagina) {
 
 // montarCards
 function montarCards(characters) {
+      /*
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="container">         
+          <div class="card">
+              <img src="./imgs/136.jpeg" class="card-img-top" alt="avatar">
+              <div class="card-body px-5">
+                <h5 class="card-title">Nome Personagem</h5>
+
+                <p class="card-text status alive">
+                  Vivo - Humano
+                </p>
+
+                <dl>
+                  <dt>Ultima localização conhecida:</dt>
+                  <dd>Planeta XPTO</dd>
+
+                  <dt>Visto a última vez em:</dt>
+                  <dd>Nome do Capítulo</dd>
+                </dl>
+              </div>
+          </div>
+        </div>
+      </div>
+    */
   const rowCards = document.getElementById('row-cards')
   rowCards.innerHTML = ''
 
@@ -113,38 +136,10 @@ function montarCards(characters) {
     divContainerCards.appendChild(divCard)
     divCol.appendChild(divContainerCards)
     rowCards.appendChild(divCol)
-
-
-    
-
-    /*
-        <div class="col-12 col-md-6 col-lg-4">
-        <div class="container">         
-          <div class="card">
-              <img src="./imgs/136.jpeg" class="card-img-top" alt="avatar">
-              <div class="card-body px-5">
-                <h5 class="card-title">Nome Personagem</h5>
-
-                <p class="card-text status alive">
-                  Vivo - Humano
-                </p>
-
-                <dl>
-                  <dt>Ultima localização conhecida:</dt>
-                  <dd>Planeta XPTO</dd>
-
-                  <dt>Visto a última vez em:</dt>
-                  <dd>Nome do Capítulo</dd>
-                </dl>
-              </div>
-          </div>
-        </div>
-      </div>
-    */
   })
 }
 
-// mudarBotoes
+// mudar os botoes
 function mudarBotoes(prev, next) {
   botaoAtual.children[0].innerText = paginaAtual
 
@@ -166,13 +161,10 @@ if (!next) {
 }
 
 async function proximaPagina() {
-  // verificar se o botão esta desabilitado
   if (!botaoNext.classList.contains('disabled')) {
-      // só dispara a requisição pra API se o botão estiver habilitado
       ++paginaAtual
 
       const dadosAPI = await buscarPersonagens(paginaAtual)
-
 
       montarCards(dadosAPI.results)
       mudarBotoes(dadosAPI.info.prev, dadosAPI.info.next)
@@ -180,9 +172,7 @@ async function proximaPagina() {
 }
 
 async function paginaAnterior() {
-  // verificar se o botão esta desabilitado
   if (!botaoPrev.classList.contains('disabled')) {
-      // só dispara a requisição pra API se o botão estiver habilitado
       --paginaAtual
 
       const dadosAPI = await buscarPersonagens(paginaAtual)

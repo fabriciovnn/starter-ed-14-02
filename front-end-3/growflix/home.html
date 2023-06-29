@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Growflix - Todos os vídeos da Growdev em um só lugar.</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./assets/bootstrap-5.3.0-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="vh-100">
+  <header class="container-fluid h-75 d-flex flex-column justify-content-between pb-5" id="menu-home">
+    <nav class="navbar navbar-expand-lg px-3">
+      <a href="#" class="navbar-brand">
+        <img src="./imagens/logo-growflix.svg" alt="Logo Growflix" width="120">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link text-light" href="#">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#episodios">Growcast[episódios]</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#flutter">Webinar em flutter</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#ux-ui">Jornada UX/UI</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#diversos">Diversos</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="row text-left text-light">
+      <div class="offset-2 col-8">
+        <div class="container fw-bold">
+          <p>PODCAST</p>
+          <h1 class="display-2 fw-bold mb-3">GROWCAST</h1>
+          <button type="button" class="btn btn-light fw-bold fs-5"><i class="bi bi-play-fill"></i>Assistir</button>
+        </div>
+      </div>
+    </div>
+
+
+
+  </header>
+
+  <main class="container-fluid bg-black">
+
+    <section id="episodios" class="container pb-5">
+      <div class="row">
+        <div class="col-12">
+          <div class="container my-2">
+            <a href="#episodios" class="text-light text-decoration-none fs-5 fw-bold">Growcast [Episódios] <i class="bi bi-play-fill"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div id="growcast" class="row mt-3">
+
+      </div>
+    </section>
+
+    <section id="flutter" class="container pb-5">
+      <div class="row">
+        <div class="col-12">
+          <div class="container my-2">
+            <a href="#episodios" class="text-light text-decoration-none fs-5 fw-bold">Webinar em Flutter <i class="bi bi-play-fill"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div id="webinar" class="row mt-3">
+        <!-- renderizar via js -->
+      </div>
+    </section>
+
+    <section id="ux-ui" class="container pb-5">
+      <div class="row">
+        <div class="col-12">
+          <div class="container my-2">
+            <a href="#episodios" class="text-light text-decoration-none fs-5 fw-bold">Jornada UX/UI <i class="bi bi-play-fill"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div id="uxUI" class="row mt-3">
+        <!-- renderizar via js -->
+        <!-- <div class="col-3">
+
+
+            <img src="https://img.youtube.com/vi/aJ-HZuLcKeA/sddefault.jpg" class="img-fluid">
+
+
+          <div>
+            <button>
+              <i class="bi bi-play-circle-fill"></i>
+            </button>
+
+            <h2>Titulo</h2>
+          </div>
+
+        </div> -->
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- modal -->
+  <div class="modal" tabindex="-1" role="dialog" id="modal-videos">
+    <div class="modal-dialog modal-fullscreen" role="document">
+      <div class="modal-content modal-video">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body ratio ratio-21x9" id="video-iframe">
+          <!-- renderizar video aqui -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="container-fluid bg-black">
+    <div class="row">
+      <div class="col-12">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p>Dúvidas? Ligue 0800 591 8942</p>
+            </div>
+          </div>
+      
+          <div class="row">
+            <div class="col-3">
+              <ul class="p-0">
+                <li class="pt-2">Perguntas frequentes</li>
+                <li class="pt-2">Relações com investidores
+                <li class="pt-2">Formas de assistir</li>
+                <li class="pt-2">Informações corporativas</li>
+                <li class="pt-2">Só na Growflix</li>
+              </ul>
+            </div>
+            <div class="col-3">
+              <ul class="p-0">
+                <li class="pt-2">Central de Ajuda</li>
+                <li class="pt-2">Carreiras</li>
+                <li class="pt-2">Termos de Uso</li>
+                <li class="pt-2">Entre em contato</li>
+              </ul>
+            </div>
+            <div class="col-3">
+              <ul class="p-0">
+                <li class="pt-2">Conta</li>
+                <li class="pt-2">Resgatar cartão pré-pago</li>
+                <li class="pt-2">Privacidade</li>
+                <li class="pt-2">Teste de velocidade</li>
+              </ul>
+            </div>
+            <div class="col-3">
+              <ul class="p-0">
+                <li class="pt-2">Media Center</li>
+                <li class="pt-2">Comprar cartão pré-pago</li>
+                <li class="pt-2">Preferências de cookies</li>
+                <li class="pt-2">Avisos legais</li>
+              </ul>
+            </div>
+          </div>
+      
+          <div class="row">
+            <div class="col-12">
+              <p>Growflix Growdev</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+  <script src="./js/data.js"></script>
+  <script src="./js/movie.js"></script>
+
+</body>
+
+</html>
