@@ -20,6 +20,10 @@ h1 {
   color: #489529;
 }
 
+.nome-personagem {
+  color: #39ff14
+}
+
 /* main */
 main {
   background-color: #252525;
@@ -68,14 +72,14 @@ main {
     border-color: #39ff14;
   }  
 
-.page-link {
+.page-link, #voltar {
 	color: #39ff14;
 	cursor: pointer;
 	background-color: #252525;
 	border-color: #39ff14;
 }
 
-.page-link:hover {
+.page-link:hover, #voltar:hover {
   color: #39ff14;
   background-color: seagreen;
   border-color: #39ff14;
@@ -109,6 +113,15 @@ footer {
     font-size: 6rem;
   }
 
+  .nome-personagem {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .dlInfo {
+    font-size: 2rem;
+  }
+
   .bg-image {
     height: 300px;
   }
@@ -121,14 +134,26 @@ footer {
     font-size: 3.5rem;
   }
 
+  .nome-personagem {
+    font-size: 2.5rem;
+  }
+
+  .dlInfo {
+    font-size: 2rem
+  }
+
   .bg-image {
     height: 400px;
   }
 }
 
 /* large */
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1399px) {
   h1 {
     font-size: 5rem;
+  }
+
+  .dlInfo {
+    font-size: 1.75rem
   }
 }

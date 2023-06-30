@@ -4,7 +4,6 @@ const botaoNext = document.getElementById('botao-next')
 let paginaAtual = 1
 
 
-// ao carregar a DOM
 document.addEventListener('DOMContentLoaded', async () => {
   const respostaApi = await buscarPersonagens()
   const characterList = respostaApi.results
@@ -29,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 botaoNext.addEventListener('click', proximaPagina)
 botaoPrev.addEventListener('click', paginaAnterior)
 
-// buscar personagens
+
 async function buscarPersonagens(pagina) {
   try{
     const response = await api.get('/character', {
@@ -40,11 +39,11 @@ async function buscarPersonagens(pagina) {
     return response.data
   } catch (error) {
     console.log(error)
-    return []
+    alert('Não foi possível buscar os personagens')
+    return
   }
 }
 
-// montarCards
 function montarCards(characters) {
       /*
       <div class="col-12 col-md-6 col-lg-4">
@@ -82,6 +81,10 @@ function montarCards(characters) {
 
     const divCard = document.createElement('div')
     divCard.classList.add('card')
+    divCard.addEventListener('click', () => {
+      localStorage.setItem('personagemId', `${character.id}`)
+      window.location.href = 'personagens.html'
+    })
 
     const imgCard = document.createElement('img')
     imgCard.setAttribute('src', `${character.image}`)
@@ -139,7 +142,6 @@ function montarCards(characters) {
   })
 }
 
-// mudar os botoes
 function mudarBotoes(prev, next) {
   botaoAtual.children[0].innerText = paginaAtual
 
