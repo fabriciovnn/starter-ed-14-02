@@ -8,11 +8,15 @@ const rowWebinar = document.getElementById('webinar')
 const filtroWebinar = movies.filter(movie => movie.category === 'webinar')
 const rowUXUI = document.getElementById('uxUI')
 const filtroUXUI = movies.filter(movie => movie.category === 'ux-ui')
+const rowDiversos = document.getElementById('geral')
+const filtroDiversos = movies.filter(movie => movie.category === 'geral')
+const buttonVamosLa = document.getElementById('buttonVamosLa')
+
 
 function renderizarVideos (elemento, filtroVideos) {
   filtroVideos.forEach((movie) => {
     const divCol = document.createElement('div')
-    divCol.classList.add('col-3')
+    divCol.setAttribute('class','col-3 video-hov')
 
     divCol.addEventListener('click', () => rodarVideo(movie.link))
 
@@ -20,24 +24,28 @@ function renderizarVideos (elemento, filtroVideos) {
     imgThumb.setAttribute('src', movie.img)
     imgThumb.classList.add('img-fluid')
 
-/*          <div>
-            <button>
-              <i class="bi bi-play-circle-fill"></i>
-            </button>
-
-            <h2>Titulo</h2>
-          </div>*/
-
     const divHover = document.createElement('div')
-    
+    divHover.setAttribute('class', 'text-light')
 
-    divCol.appendChild(img)
+    const buttonVideo = document.createElement('div')
+    buttonVideo.setAttribute('type', 'button')
+    buttonVideo.setAttribute('class', 'btn btn-video d-flex align-items-center')
+    buttonVideo.innerHTML = `
+    <i class="bi bi-play-circle fs-1"></i>
+    <h2">${movie.title}</h2>
+    `
+
+    divHover.appendChild(buttonVideo)
+    divCol.appendChild(imgThumb)
+    divCol.appendChild(divHover)
 
     elemento.appendChild(divCol)
   })
 }
 
 function rodarVideo(link) {
+
+  
 /*
 <iframe src="https://www.youtube.com/embed/aJ-HZuLcKeA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 */
@@ -52,3 +60,4 @@ function rodarVideo(link) {
 renderizarVideos(rowGrowcast, filtroGrowcast)
 renderizarVideos(rowWebinar, filtroWebinar)
 renderizarVideos(rowUXUI, filtroUXUI)
+renderizarVideos(rowDiversos, filtroDiversos)
