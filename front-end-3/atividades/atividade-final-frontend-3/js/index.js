@@ -9,17 +9,17 @@ document.addEventListener('DOMContentLoaded', async () => {
   const characterList = respostaApi.results
 
   const spanTotalPersonagens = document.getElementById('total-personagens')
-  spanTotalPersonagens.innerHTML = `${respostaApi.info.count}`
+  spanTotalPersonagens.innerHTML = respostaApi.info.count
 
   const spanTotalLocalizacoes = document.getElementById('total-localizacoes')
   const respostaLocation = await api.get('/location')
   const totalLocalizacoes = respostaLocation.data.info.count
-  spanTotalLocalizacoes.innerHTML = `${totalLocalizacoes}`
+  spanTotalLocalizacoes.innerHTML = totalLocalizacoes
 
   const spanTotalEpisodios = document.getElementById('total-episodios')
   const respostaEpisodes = await api.get('/episode')
   const totalEpisodios = respostaEpisodes.data.info.count
-  spanTotalEpisodios.innerHTML = `${totalEpisodios}`
+  spanTotalEpisodios.innerHTML = totalEpisodios
 
   montarCards(characterList)
   mudarBotoes(respostaApi.info.prev, respostaApi.info.next)
@@ -74,7 +74,7 @@ function montarCards(characters) {
 
   characters.forEach(async (character) => {
     const divCol = document.createElement('div')
-    divCol.setAttribute('class', 'col-12 col-md-6 col-lg-4')
+    divCol.setAttribute('class', 'col-12 col-md-6 col-lg-4 fade-in-content')
 
     const divContainerCards = document.createElement('div')
     divContainerCards.classList.add('container')
@@ -96,7 +96,7 @@ function montarCards(characters) {
 
     const titleCard = document.createElement('h5')
     titleCard.setAttribute('class', 'card-title')
-    titleCard.innerText = `${character.name}`
+    titleCard.innerText = character.name
     
     const pCardStatus = document.createElement('p')
     pCardStatus.innerHTML = `${character.status} - ${character.species}`
@@ -114,7 +114,7 @@ function montarCards(characters) {
     dtLocation.innerText = 'Last Known Location'
 
     const ddLocation = document.createElement('dd')
-    ddLocation.innerText = `${character.location.name}`
+    ddLocation.innerText = character.location.name
 
     const dtLastSeen = document.createElement('dt')
     dtLastSeen.innerText = 'Last Seen In'
@@ -123,7 +123,7 @@ function montarCards(characters) {
     const ultimoEpisodio = character.episode[character.episode.length -1]
     const respostaLocalizacao = await axios.get(`${ultimoEpisodio}`)
     const ultimaLocalizacao = respostaLocalizacao.data.name
-    ddLastSeen.innerText = `${ultimaLocalizacao}`
+    ddLastSeen.innerText = ultimaLocalizacao
 
     dlCard.appendChild(dtLocation)
     dlCard.appendChild(ddLocation)

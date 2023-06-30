@@ -20,7 +20,7 @@ h1 {
   color: #489529;
 }
 
-.nome-personagem {
+.nome-personagem, .span-info {
   color: #39ff14
 }
 
@@ -100,10 +100,35 @@ main {
   cursor: pointer;
 }
 
+
 /* footer */
 footer {
   background-color: #489529;
   color: #252525;
+}
+
+/* Animação */
+.fade-in-title {
+  opacity: 0;
+  animation: fade-in 1s ease-in-out forwards;
+}
+
+.fade-in-input {
+  opacity: 0;
+  animation: fade-in 2s ease-in-out forwards;
+}
+
+.fade-in-content {
+  opacity: 0;
+  animation: fade-in 3s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
 }
 
 /* MEDIA QUERIES */
@@ -155,5 +180,12 @@ footer {
 
   .dlInfo {
     font-size: 1.75rem
+  }
+}
+
+/* Extra large */
+@media (min-width: 1400px) {
+  h1 {
+    font-size: 5rem;
   }
 }

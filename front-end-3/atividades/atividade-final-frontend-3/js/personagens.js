@@ -8,6 +8,15 @@ const rowCard = document.getElementById('row-card')
 document.addEventListener('DOMContentLoaded', async () => {
   const character = await BuscarPersonagemId()
 
+  const spanNomePersonagem = document.getElementById('personagem')
+  spanNomePersonagem.innerHTML = `${character.name}`
+
+  const spanLocalizacaoPersonagem = document.getElementById('localizacao-personagem')
+  spanLocalizacaoPersonagem.innerHTML = character.location.name
+
+  const spanTotalEpisodios = document.getElementById('total-episodios')
+  spanTotalEpisodios.innerHTML = character.episode.length
+
   montarCard(character)
 })
 
@@ -50,8 +59,8 @@ async function montarCard (personagem) {
 
         <div class="col-12 col-md-6 col-lg-8 text-light fs-1">
           <div class="container">
-            <h1 class="display-1 fw-bold">Nome Personagem</h1>
-            <dl>
+            <h1 class="display-3 fw-bold">Nome Personagem</h1>
+            <dl class="dlInfo animacao">
               <dt>Type</dt>
               <dd>unknown</dd>
 
@@ -70,7 +79,7 @@ async function montarCard (personagem) {
 
   // MONTAGEM DO CARD
   const divColCard = document.createElement('div')
-  divColCard.setAttribute('class', 'col-12 col-md-6 col-lg-4')
+  divColCard.setAttribute('class', 'col-12 col-md-6 col-lg-4 fade-in-content')
 
   const divContainerCard = document.createElement('div')
 
@@ -119,11 +128,11 @@ async function montarCard (personagem) {
 
   //MONTAGEM DA INFORMAÇÃO EXTRA
 const divColInfo = document.createElement('div')
-divColInfo.setAttribute('class', 'col-12 col-md-6 col-lg-8 text-light fs-1')
+divColInfo.setAttribute('class', 'col-12 col-md-6 col-lg-8 text-light fs-1 fade-in-content')
 const divContainerInfo = document.createElement('div')
 
 const titleInfo = document.createElement('h2')
-titleInfo.setAttribute('class', 'display-2 fw-bold nome-personagem')
+titleInfo.setAttribute('class', 'display-3 fw-bold nome-personagem')
 titleInfo.innerText = personagem.name
 
 const dlInfo = document.createElement('dl')
