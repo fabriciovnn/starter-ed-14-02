@@ -1,0 +1,23 @@
+tipos de envios de dados através de uma requisição
+
+modificações: 
+ - aplicado data para registro de cada transação
+ -
+
+PATH PARAMS
+- declarado na rota com /:nomePropriedade
+- acessado pelo request.params
+- para passar mais que uma propriedade basta apenas adicionar mais uma barra: /:nomePropriedade/:outraPropriedade
+
+* tudo que recebemos com route params, sempre serão do tipo string *
+  - Se necessário manipular esse dado, convertê-lo antes.
+
+QUERY PARAMS
+//quando precisamos buscar uma lista de dados ( filtrada ou não ) query 
+
+- se vier o filtro, utiliza-los, se não vier devolver a listagem inteira
+- somente vira em um metodo GET, em listagem com filtros
+
+*SPREAD OPERATOR*
+ - faz uma copia de uma referencia para um novo dado em memoria
+ - se simplismente atribuirmos uma variavel com outro dado em memoria, ele fará referencia ao mesmo, assim o modificando

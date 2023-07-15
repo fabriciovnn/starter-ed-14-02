@@ -1,0 +1,54 @@
+PILARES DA PROGRAMAÇÃO ORIENTADA A OBJETOS
+
+ * Abstração 
+   - criar modelos para poder gerar as coisas do mundo real.
+
+ * Encapsulamento 
+   - um dos principais conceitos presentes em POO
+   - adiciona segurança a nossa aplicação
+   - esconde propriedades de uma classe, de forma a não permitir acesso direto a ela
+   - tornar o dado acessivel apenas se necessário
+
+   VISIBILIDADE
+    visibilidade publica - recursos definidos como public podem ser acessados por qualquer um. é o valor default. Cada propriedade pode ser modificada para private ou public
+    visibilidade privada - está disponivel somente dentro da classe. Utilizar metodos da classe para modificar essas propriedades
+
+    para fazer a leitura de um dado privado, utilizar getters . setters são modificadores do dado contido naquela propriedade
+
+    GETERS -> metodos acessores
+      iniciar public get e utilizar o snipped do get 
+      modificar o value pelo nome da propriedade,
+      não recebe parametros
+      tipo de retorno sempre vai ser o mesmo tipo do dado
+      return this.propriedade
+      É boa prática:
+        modificar a propriedade na classe, para começar com underline _
+
+    SETTERS -> metodos modificadores
+      iniciar public get e utilizar o snipped do set
+      nao possui retorno
+      deve sempre receber o parametro que sera o novo valor para o atributo que esta setando
+      objetivo é trocar o valor da propriedade que deve ser modificada
+
+ * Herança
+   - permite a criação de abstrações maiores, com o intuito de organizar hierarquicamente a aplicação
+
+  uma classe pai "abstract" tem um objetivo de gerar outras classes filhas que tem os mesmos metodos e atributos
+  na classe pai não é necessario a logica dos metodos
+
+  na classe filha, utilizar a sintaxe:
+  export class Growdever extends Aluno {
+
+  }
+
+  para chamar o construtor da classe pai, utilizar:
+  constructor(parametros recebidos para a classe pai) {
+    super(parametros recebidos no construtor);
+    this._turmaAnterior = _turmaAnterior;
+  }
+
+  protected - esse tipo de visibilidade, ficara disponivel apenas para parte daquela aplicação. ou seja, teremos acesso na classe filha, mas não na classe instanciada.
+  Utilizar quando for necessário modificar a propriedade na classe filha.
+
+  POLIMORFISMO 
+  - é o conceito pelo qual uma classe pode possuir diferentes comportamentos para uma mesma situação
