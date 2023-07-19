@@ -1,0 +1,23 @@
+Type é usado para criar um dado estruturado e alias
+Interface é utilizado para modelar um objeto
+
+sintaxe if ternário: condição ? true : false
+
+Utilizar o metodo de array some , para procurar em uma determinada lista se existe aquele id ou não. esse método retorna um boolean
+
+um metodo acessor novo:
+
+toJSON() {
+
+return {
+ id: this._id;
+ nome: this._nome;
+ }
+}
+
+
+para acessar:  novoUsuario.toJSON()
+colocar dentro de bigodes o retorno das propriedades que estao privadas
+lembrando que ao acessar, é criado uma "foto" das propriedades do objeto original
+
+
