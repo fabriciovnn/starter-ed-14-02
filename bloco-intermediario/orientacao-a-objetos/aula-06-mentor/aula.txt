@@ -1,0 +1,41 @@
+RELACIONAMENTO ENTRE CLASSES
+
+Associação, agregação e composição:
+  *conceitualmente possuem diferenças, mas na prática normalmente denominamos tudo como composição.
+  *nada mais é do que criar relacionamentos entre classes sem ser por herança.
+
+  composicao: é quando uma classe tem atributos de outra classe, é um tipo de relacionamento.
+  agregação: uma determinada classe não pode existir sem outra, uma classe depende de outra para existir.
+  Associação: a classe não tem um vinculo direto com as outras classes, elas não dependem da classe em si para existir
+
+  *na maioria das vezes, a composição vai fazer muito mais sentido do que a herança.
+
+  beneficios:
+  *entendimento do projeto
+  *manutenabilidade
+
+----------------------------------------------------------------------------------------------------------------------------
+
+  DIAGRAMAS
+
+  Unified Modeling Language ( UML )
+  
+  *Uma linguagem de notação para uso de projeto de sistemas
+
+  *É expressa através de diagramas
+   - estruturais e comportamentais
+
+double, float, int - tipos numericos com casas flutuantes diferentes
++ no diagrama é public
+- é private
+# protected
+classes abstratas - flecha vazada apontando para a classe abstrata. Classe abstrata com o nome escrito em itálico ou com <<Base>>
+
+interface - representada no diagrama, serve como contrato para outras classes herdarem os metodos. Não vai possuir a parte do meio como as classes no diagrama
+
+0..* pode nao ter nenhuma ou pode existir varias contas respectivamente. É opcional, pode ou não existir
+1..1 é obrigatório ter um, e no máximo 1
+
+Estrutural - 
+
+Comportamental -
