@@ -1,0 +1,19 @@
+para atualizar (PUT):
+
+atualizar apenas as propriedades que vierem
+se não vier, não atualiza
+
+metodo de array REDUCE
+recebe como parametro uma callback e o valor inicial para prev
+
+serve para retornar um unico resultado
+pegar uma massa de dados e retornar um resultado dela
+um conjunto de arrays e retornar em uma array apenas
+
+como parametro, da callback recebe (prev, currentValue)
+
+prev é onde vai ser atribuida a soma
+currentValue é o valor atual que está verificando no array
+
+deletar recebendo o id
+recalcular o saldo
