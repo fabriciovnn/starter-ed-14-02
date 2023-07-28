@@ -1,0 +1,5 @@
+controllers server parar criar uma camada que modela onde fica armazenado os métodos da nossa api
+
+essa camada tem a responsabilidade de ter a lógica dos métodos que vão ser chamados no arquivo index/server
+
+basta criar uma classe, e exportar a instancia para o arquivo das rotas
