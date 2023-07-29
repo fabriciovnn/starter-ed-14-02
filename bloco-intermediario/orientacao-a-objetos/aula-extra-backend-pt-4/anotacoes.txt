@@ -1,0 +1,18 @@
+
+client > validators/middlewares > função da rota/controllers
+
+middlewares para: 
+  validar id
+  validar dados
+
+middlewares:
+
+precisam dos parametros - request, response e next
+
+
+ele tem a responsabilidade de dar o response caso tenha algo errado
+caso de tudo certo ele chama o next
+
+alem de validar, o middleware manipula o valor para que a próxima função utilize já o dado corretamente
+
+criar arquivo index.js para exportar todos os middlewares
