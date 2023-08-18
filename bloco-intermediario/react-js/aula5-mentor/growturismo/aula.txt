@@ -1,0 +1,14 @@
+Componente {
+no topo do componente
+declaracao variaveis de estado - não pode ser condicional
+Utiliza o useState from 'react'
+
+retorna um array com duas posiçoes: [variavel, setVariavel]
+
+
+no meio do componente
+função que contem a logica
+
+ao final do componente
+return da função
+}
