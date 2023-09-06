@@ -1,0 +1,35 @@
+Introdução a banco de dados
+
+Bate papo do entendimento da turma sobre banco de dados
+
+feito com código SQL.
+
+A diferença entre dado e informação.
+
+o dado em si sozinho não faz o menor sentido.
+o dado é qualquer caracteristica de um objeto
+
+informação é o resultado que obtemos através de um processamento.
+já informação é algo que possui uma contextualização. Um dado que passou por um processamento.
+
+Pode ser calculado uma média com a coluna de idades, preços etc... para um processamento mais específico.
+
+BANCO DE DADOS
+
+os arquivos possuem a extensão .sql
+
+banco de dados relacional trabalha com tabelas diferentes, mas que se relacionam com outras ou dependem uma da outra para existir, como clientes e vendas por exemplo.
+
+tupla/objeto/linha/registros
+
+cada caracteristica sobre um objeto vai se tornar uma coluna
+
+cada objeto vão se tornar tuplas/linhas/registros
+
+
+chave primaria(PK - primary key) é o identificador unico de um registro
+
+forent key - FK - chave estrangeira esta relacionada com uma chave primaria.
+
+
+
