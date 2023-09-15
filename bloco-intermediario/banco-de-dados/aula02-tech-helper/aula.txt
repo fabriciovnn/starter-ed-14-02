@@ -1,0 +1,27 @@
+SELECT
+
+select * from usuarios;
+
+select nome from usuarios;
+
+usado para selecionar uma ou mais colunas de uma tabela
+
+também é possivel passar condições no select.
+
+para isso utilizar o where.
+
+select * from usuarios
+where nome = 'Anderson';
+
+ALIAS (as) = da um apelido para a tabela
+usuarios as u
+
+JOIN / ON
+
+join é quando precisa fazer uma consulta que tenha acesso a duas tabelas
+
+- utilizar através da FK e PK.
+
+on é utilizado para ligar a FK e PK - utilizar alias no on para o nome das tabelas.
+
+depois disso fazer o where normalmente do select.

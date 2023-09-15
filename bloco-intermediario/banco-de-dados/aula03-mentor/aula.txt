@@ -1,0 +1,14 @@
+DQL - SELECT JOIN / on
+
+é possível fazer mais de um join dentro de uma tabela
+
+ao utilizar left join ou right join, olha-se para o que está fora da união das tabelas ou dentro dependendo do uso.
+
+é possível verificar se um registro é nulo com is null
+
+order by e group by são declarados após um where, pois ordenam o resultado. Também podem ser usados sem where.
+
+com order by pode-se ordenar em asc ou desc.
+
+com group by, as funções de agregação se comportam de forma diferente.
+

@@ -1,0 +1,19 @@
+anotações aula 02 - banco de dados
+
+SGBD (sistema de gerenciamento de banco de dados)- gerencia os dados do banco 
+
+SQL - linguagem, conjunto de comandos padronizados para interagir com os dados armazenados.
+
+DBeaver - é uma interface gráfica para visualizar e desenvolver
+
+*SQL possui sub-linguagens*
+
+DDL - Data Definition Language
+responsavel pela definição dos dados, a estrutura da tabela
+CRUD de tabelas - atualizar tabela, ou excluir tabela
+create table, alter table e drop table
+
+DML - Data Manipulation Language
+relacionado a registros
+conjunto de comandos SQL responsaveis por interagir diretamente nas tabelas, inserindo, removendo e atualizando dados.
+select, insert, update, delete
