@@ -1,0 +1,60 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Criminals {
+  id String @id @db.Uuid @default(uuid())
+  name String @db.VarChar(150)
+  birthDate DateTime @db.Timestamp() @map("birth_date")
+  cpf String? @db.VarChar(11) @unique
+  gender String @db.VarChar(100)
+  rg String? @db.VarChar(13) @unique
+  cnh String? @db.VarChar(20)
+  description String? @db.VarChar(255)
+  address String? @db.VarChar(255)
+  createAt DateTime @db.Timestamp() @default(now()) @map("create_at")
+  updateAt DateTime @db.Timestamp() @updatedAt @map("update_at")
+
+  crimes Crimes[]
+
+  @@map("criminals")
+}
+
+model Weapons {
+    id String @id @db.Uuid @default(uuid())
+    type Int? @db.Integer
+    caliber Float @db.DoublePrecision
+    name String @db.VarChar(150)
+    serialNumber String? @db.VarChar(100) @map("serial_number")
+    length Float? @db.DoublePrecision
+    weight Float? @db.DoublePrecision
+    description String? @db.VarChar(255)
+    createAt DateTime @db.Timestamp() @default(now()) @map("create_at")
+    updateAt DateTime @db.Timestamp() @updatedAt @map("update_at")
+
+    crimeID String @db.Uuid @unique @map("crime_id")
+    crime Crimes @relation(fields: [crimeID], references: [id])
+    @@map("weapons")
+}
+
+model Crimes {
+    id String @id @db.Uuid @default(uuid())
+    description String @db.VarChar(255)
+    crimeDate DateTime @db.Timestamp() @map("crime_date")
+    article String @db.VarChar(100)
+    severity Int @db.Integer
+    victims String @db.VarChar(150)
+    address String? @db.VarChar(255)
+    createAt DateTime @db.Timestamp() @default(now()) @map("create_at")
+    updateAt DateTime @db.Timestamp() @updatedAt @map("update_at")
+
+    criminalID String @db.Uuid @map("criminal_id")
+    criminal Criminals @relation(fields: [criminalID], references: [id])
+    weapon Weapons[]
+
+    @@map("crimes")
+}
