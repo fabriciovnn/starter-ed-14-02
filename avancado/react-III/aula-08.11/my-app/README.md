@@ -1,0 +1,1 @@
+O MUI é uma biblioteca de interfaces de usuário desenvolvida para React. Ele oferece uma ampla variedade de componentes reutilizáveis, como botões, barras de navegação, caixas de diálogo, tabelas e muito mais. Os componentes têm um design responsivo e são facilmente customizáveis, além de seguirem as diretrizes do Google Material Design, o que lhes dá um design limpo e coeso.
