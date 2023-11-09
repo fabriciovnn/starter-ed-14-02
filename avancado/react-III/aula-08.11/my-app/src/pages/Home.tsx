@@ -16,8 +16,12 @@ import {
   TextareaAutosize,
   Stack,
   styled,
+  Modal,
+  Fab,
+  TextField,
 } from "@mui/material";
-import { AdsClick } from "@mui/icons-material";
+import { AdsClick, Add } from "@mui/icons-material";
+import { useState } from "react";
 
 const TextareaAutosizeStyled = styled(TextareaAutosize)(
   () => `
@@ -31,7 +35,23 @@ const TextareaAutosizeStyled = styled(TextareaAutosize)(
 `
 );
 
+const style = {
+  position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
+
 function Home() {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <>
       <AppBar position="static">
@@ -52,7 +72,7 @@ function Home() {
         </Toolbar>
       </AppBar>
 
-      <Box component="main">
+      <Box component="main" sx={{ overflow: "hidden" }}>
         <Container maxWidth="sm" sx={{ pt: 8, pb: 6 }}>
           <Typography
             variant="h4"
@@ -122,6 +142,59 @@ function Home() {
             />
           </Stack>
         </Container>
+        <Fab
+          onClick={handleOpen}
+          color="primary"
+          aria-label="add"
+          sx={{ position: "fixed", right: 5, bottom: 5 }}
+        >
+          <Add />
+        </Fab>
+
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              Cadastro de Tarefas
+            </Typography>
+            <Box
+              component="form"
+              sx={{
+                "& > :not(style)": { m: 1, width: "100%" },
+              }}
+              noValidate
+              autoComplete="off"
+            >
+              <TextField
+                id="outlined-basic"
+                label="tarefa 1"
+                variant="outlined"
+                fullWidth
+              />
+              <TextField
+                id="filled-basic"
+                label="tarefa 2"
+                variant="outlined"
+                fullWidth
+              />
+              <TextField
+                id="standard-basic"
+                label="tarefa 3"
+                variant="outlined"
+                fullWidth
+              />
+              <Stack height={50} direction="row" justifyContent="center">
+                <Button onClick={handleClose} variant="contained">
+                  Sortear
+                </Button>
+              </Stack>
+            </Box>
+          </Box>
+        </Modal>
       </Box>
     </>
   );
