@@ -117,18 +117,14 @@ function Home() {
                   <TableRow
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
-                    <TableCell component="th" scope="row">
-                      Vitória
-                    </TableCell>
+                    <TableCell scope="row">Vitória</TableCell>
                     <TableCell align="right">Design</TableCell>
                   </TableRow>
 
                   <TableRow
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
-                    <TableCell component="th" scope="row">
-                      Fabricio
-                    </TableCell>
+                    <TableCell scope="row">Fabricio</TableCell>
                     <TableCell align="right">Back End</TableCell>
                   </TableRow>
                 </TableBody>
