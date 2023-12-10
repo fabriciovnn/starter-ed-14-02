@@ -1,0 +1,10 @@
+POST http://localhost:8081/alunos HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "Alemon",
+    "senha": "senha123",
+    "email": "alemon@teste.com",
+    "idade": 25,
+    "tipo": "T"
+}
