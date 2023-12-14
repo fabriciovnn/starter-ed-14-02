@@ -1,0 +1,8 @@
+POST http://localhost:8081/avaliacoes HTTP/1.1
+content-type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg5NmZhY2ViLTNiMTQtNDYyOC1hNDQ5LTllNTBlNGQ5MTY5YiIsIm5vbWVDb21wbGV0byI6IkpvaG4gTGVubm9uIiwiZW1haWwiOiJqb2huQHRlc3RlLmNvbSIsInRpcG8iOiJNIiwiaWF0IjoxNzAxOTg5NjkyLCJleHAiOjE3MDE5OTMyOTJ9.FD57jOk5QuRGC5i9U52GCLxa__elpwDOCXzP-_jXURs
+
+{
+    "modulo": "Front-End I",
+    "nota": 8
+}
